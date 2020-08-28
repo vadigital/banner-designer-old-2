@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html >
+  <head>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1600px">
+  <title>Virgin Australia Home Banner Designer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700" rel="stylesheet" />
+  <link rel="shortcut icon" href="http://www.virginaustralia.com/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+  <div class="form-fields">
+    <div class="style-fields">
+      <div class="field">
+        <strong>Primary headline</strong> (<span class="primary-chars">40</span> character max)<br>
+        <input type="text" class="textbox primary-headline" value="Lorem ipsum dolor sit amet consecteturs" onfocus="clearText(this);" maxlength="40" />
+      </div>
+      <div class="field">
+        <strong>Secondary headline</strong> (<span class="secondary-chars">120</span> character max)<br>
+        <input type="text" class="textbox secondary-headline" value="Lorem ipsum dolor sit amet <br> consecteturs" onfocus="clearText(this);" maxlength="120" />
+      </div>
+      <div class="field short">
+        <strong>Terms and conditions</strong><br>
+        <input type="text" class="textbox terms-and-conditions" value="*Conditions apply." onfocus="clearText(this);" />
+      </div>
+      <div class="field">
+        <strong>Text colour</strong><br>
+        <select class="headline-color" onchange="changeColor()">
+          <option value="#36424a">Grey</option>
+          <option value="#FFFFFF">White</option>
+          <option value="#512698">Purple</option>
+          <option value="#d6083b">Red</option>
+        </select>
+      </div>
+      <div class="field">
+        <strong>T&amp;C colour</strong><br>
+        <select class="terms-color" onchange="changeColor()">
+          <option value="#36424a">Grey</option>
+          <option value="#a5acb0">Light Grey</option>
+          <option value="#FFFFFF">White</option>
+        </select>
+      </div>
+      <div class="field">
+        <strong>Banner image</strong><br>
+        <input type="file" onchange="readBanner(this);" accept="image/*" />
+      </div>
+    </div>
+    <div class="custom-fields">
+       <div class="field short">
+        <strong>Custom width (pixels)</strong> <br>
+        <input type="text" class="textbox custom-width" placeholder="600" onfocus="clearText(this);" maxlength="4" />
+      </div>
+      <div class="field short">
+        <strong>Custom height (pixels)</strong> <br>
+        <input type="text" class="textbox custom-height" placeholder="400" onfocus="clearText(this);" maxlength="4" />
+      </div>
+      <div class="field">
+        <strong>Banner image</strong><br>
+        <input type="file" onchange="readBanner(this);" accept="image/*" />
+      </div>
+    </div>
+  </div><!--form-fields-->
+
+  <div class="device-toggle">
+    <div class="option responsive-desktop" data-device="responsive-desktop">Desktop<span>TBA</span></div>
+    <div class="option responsive-mobile" data-device="responsive-mobile">Mobile<span>TBA</span></div>
+    <div class="option desktop is-active" data-device="desktop">Desktop<span>1600 x 620</span></div>
+    <div class="option mobile" data-device="mobile">Mobile<span>640 x 390</span></div>
+    <div class="option custom" data-device="custom">Custom<span>Any size</span></div>
+  </div>
+  <div id="page" class="is-desktop-banner">
+    <a href="javascript:;" class="edit-image">Reposition Image</a>
+    <a href="javascript:;" class="filter darken-image">Darken Image</a>
+    <a href="javascript:;" class="filter lighten-image">Lighten Image</a>
+    <div class="banner">
+      <div class="container">
+        <img src="img/search.jpg" alt="" class="search" data-html2canvas-ignore />
+        <div class="banner-text">
+          <h1>Lorem ipsum dolor sit amet consecteturs</h1>
+          <h2>Lorem ipsum dolor sit amet <br> consecteturs</h2>
+          <h4>*Conditions apply.</h4>
+        </div>
+      </div>
+      <img id="banner-image" src="" />
+      <div class="select-logos" data-html2canvas-ignore>
+        <div class="remove" title="Remove" data-html2canvas-ignore>&#10060;</div>
+        <div class="choose-file"><strong>Banner logos</strong> (optional)<br><input type="file" onchange="readLogos(this);" accept="image/*" data-html2canvas-ignore /></div>
+        <img id="logos" src="" />
+      </div>
+    </div><!--banner-->
+  </div><!--page-->
+
+  <div class="save-actions">
+    <div class="save-full-banner">Save design draft (jpeg)</div>
+    <div class="save-image-only">Save banner image (jpeg)</div>
+  </div>
+
+  <div class="help">
+    <a href="" class="tooltip" data-tooltip="The banner designer helps create simple banners without needing extra software. Upload your own images, reposition them in the template and resize them by selecting the corners of the image in the design. Fill in the details and save the entire design or just the background image.">?</a>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/interact.min.js"></script>
+  <script src="js/drag-and-resize.js"></script>
+  <script src="js/html2canvas.min.js"></script>
+
+</body>
+</html>
