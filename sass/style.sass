@@ -1,0 +1,393 @@
+$font-family: "Montserrat", "Gotham", Arial, Sans-serif
+$va-red: #d6083b
+$dark-grey: #36424a
+
+$desktop-banner-width: 1600px
+$desktop-banner-height: 620px
+
+$mobile-banner-width: 640px
+$mobile-banner-height: 390px
+
+html,
+body
+  padding: 0
+  margin: 0
+  min-height: 100vh
+  font: 13px $font-family
+  background: #f7f7f7
+
+.form-fields
+  position: relative
+  z-index: 5000
+  top: 0
+  width: 100%
+  min-height: 100px
+  border-bottom: 1px #d1d4d3 solid
+  text-align: center
+  background: #fff
+  .style-fields,
+  .custom-fields
+    .field
+      display: inline-block
+      text-align: left
+      padding: 16px 10px
+      font: 1em $font-family
+      font-weight: 400
+      line-height: 30px
+      color: $dark-grey
+      &.short
+        .textbox
+          width: 130px
+      .textbox,
+      .headline-color,
+      .terms-color
+        padding: 7px 5px
+        width: 250px
+        font: 0.8em $font-family
+      .headline-color,
+      .terms-color
+        width: auto
+      input[type=file]
+        font: 0.8em $font-family
+        width: 180px
+      strong
+        font-weight: 600
+  .custom-fields
+    display: none
+
+
+.device-toggle
+  position: relative
+  top: 52px
+  margin: 0 auto
+  text-align: center
+  z-index: 3000
+  .option
+    display: inline-block
+    font-weight: 600
+    width: 75px
+    background: #f7f7f7
+    font-weight: 700
+    text-transform: uppercase
+    padding: 14px 18px
+    letter-spacing: 1px
+    cursor: pointer
+    border: 2px #cdcdcd solid
+    border-bottom: 2px #cdcdcd dashed
+    border-top: 2px #cdcdcd solid
+    -webkit-user-select: none
+    user-select: none
+    color: #999
+    &.is-active
+      color: $va-red
+      border-bottom-color: transparent
+      border-top-color: $va-red
+    span 
+      display: block
+      font-weight: 400
+      padding: 2px 0
+      font-size: 10px
+
+#page
+  position: relative
+  margin: 50px auto 100px
+  background: #f7f7f7
+  overflow: hidden
+  border: 2px dashed #cdcdcd
+  box-sizing: border-box
+  &.is-desktop-banner
+    width: $desktop-banner-width
+    height: $desktop-banner-height
+  &:hover
+    .edit-image,
+    .filter
+      display: none
+  .edit-image,
+  .filter
+    display: none
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 100
+    padding: 10px 15px
+    text-decoration: none
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 10px
+    color: #fff
+    letter-spacing: 1px
+    background: rgba(0,0,0,0.3)
+    &:hover
+      color: #eee
+      background: rgba(0,0,0,0.6)
+    &.darken-image
+      top: 45px
+    &.lighten-image
+      top: 85px
+  .banner
+    width: $desktop-banner-width
+    height: $desktop-banner-height
+    -webkit-user-select: none
+    user-select: none
+    .container
+      display: block
+      position: relative
+      z-index: 20
+      width: 1000px
+      height: $desktop-banner-height
+      margin: 0 auto
+      .search
+        float: left
+        width: 327px
+        height: 595px
+        border: 1px #dedede solid
+        border-top: 0
+        opacity: 0.9
+      .banner-text
+        position: relative
+        float: right
+        padding: 54px 0 0 0
+        width: 615px
+        height: 540px
+        color: #36424a
+        -webkit-user-select: none
+        user-select: none
+        h1 
+          padding: 0
+          margin-bottom: 0
+          text-transform: uppercase
+          font-size: 32px
+          font-weight: 700
+          line-height: 36px
+          letter-spacing: 8px
+          -webkit-hyphens: auto
+          hyphens: auto
+        h2 
+          margin-bottom: 0
+          font-weight: 400
+          font-size: 18px
+          -webkit-hyphens: auto
+          hyphens: auto
+          letter-spacing: 2px
+        h4 
+          position: absolute
+          bottom: 15px
+          font-weight: 400
+          font-size: 11px
+          -webkit-hyphens: auto
+          hyphens: auto
+    #banner-image
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 10
+      -webkit-user-select: none
+      user-select: none
+      &.filtered,
+        opacity: 0.75
+    .select-logos
+      position: absolute
+      top: 63%
+      left: 43%
+      z-index: 100
+      padding: 2.3em 0 0 3em
+      line-height: 2em
+      box-sizing: border-box
+      height: 120px
+      width: 580px
+      overflow: hidden
+      color: $dark-grey
+      border: 2px dashed #cdcdcd
+      background: #f7f7f7
+      .remove
+        display: block
+        position: absolute
+        top: 5px
+        right: 10px
+        cursor: pointer
+        color: $dark-grey 
+        z-index: 100
+      &.has-logos
+        border: 2px dashed rgba(0,0,0,0)
+        background: rgba(0,0,0,0)
+        &:hover
+          border: 2px dashed #cdcdcd
+          background: rgba(255,255,255,0.5)
+          .remove
+            display: block
+        .remove
+          display: none
+      .choose-file
+        position: relative
+        z-index: 100
+      #logos 
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+  &.is-mobile-banner
+    width: $mobile-banner-width
+    height: $mobile-banner-height
+    border: 2px dashed #cdcdcd
+    .banner
+      width: $mobile-banner-width
+      height: $mobile-banner-height
+      .container
+        width: $mobile-banner-width
+        height: $mobile-banner-height
+        .search
+          display: none
+        .banner-text
+          float: none
+          box-sizing: border-box
+          padding: 12px 15px 0 15px
+          width: 100%
+          height: $mobile-banner-height
+          text-align: center
+          h1 
+            letter-spacing: 4px
+          h2 
+            font-size: 32px
+            font-weight: 300
+            letter-spacing: 0
+            margin-top: 15px
+          h4
+            width: 100%
+            text-align: center
+      .select-logos
+        display: none
+
+  &.is-custom-banner
+    width: 600px
+    height: 400px
+    border: 2px dashed #cdcdcd
+    .banner
+      width: 600px
+      height: 400px
+      .container,
+      .select-logos
+        display: none !important
+
+  &.is-responsive-desktop-banner,
+  &.is-responsive-mobile-banner
+    width: 100%
+    height: 600px
+    border: 2px dashed #cdcdcd
+    .banner
+      width: 100%
+      height: 600px
+      .container
+        text-align: center
+        width: 100%
+        .search
+          display: none
+        .banner-text
+          display: inline-block
+          float: none
+          width: 70%
+          h4
+            position: relative
+            bottom: auto
+            top: 340px
+      .select-logos
+        position: relative
+        top: auto
+        left: auto
+        margin: -235px auto 0
+    
+    &.is-responsive-mobile-banner
+      width: 640px
+      .banner
+        .container
+          .banner-text
+            width: 90%
+            h2
+              font-size: 32px
+            h4
+              top: 222px
+
+
+  &.has-image
+    .edit-image,
+    .darken-image,
+    .lighten-image
+      display: block
+      &.active
+        background: $va-red
+      &:hover
+        background: rgba(0,0,0,0.6)
+    .darken-image,
+    .lighten-image
+      &.active
+        background: rgba(255,255,255,0.8)
+        color: $va-red
+    .banner
+      background-color: #000
+      &.lighten
+        background-color: #fff
+.save-actions
+  position: fixed
+  bottom: 30px
+  width: 100%
+  z-index: 1000
+  text-align: center
+  div
+    display: inline-block
+    background: $va-red
+    color: #fff
+    font-weight: 700
+    text-transform: uppercase
+    margin: 0 5px
+    padding: 14px 18px
+    letter-spacing: 1px
+    cursor: pointer
+    &:hover
+      background: $dark-grey
+.help
+  position: fixed
+  bottom: 20px
+  right: 60px
+  z-index: 1000
+  .tooltip
+    position: relative
+    display: block
+    width: 60px
+    height: 60px
+    line-height: 60px
+    text-align: center
+    font-weight: 700
+    font-size: 36px
+    border: 2px $dark-grey solid
+    border-radius: 100%
+    color: $dark-grey
+    text-decoration: none
+    opacity: 0.5
+    &:after 
+      opacity: 0
+      text-align: left
+      visibility: hidden
+      position: absolute
+      content: attr(data-tooltip)
+      padding: 16px 20px
+      top: -190px
+      left: -100%
+      transform: translateX(-50%) translateY(-2px)
+      background: $dark-grey
+      font-size: 13px
+      font-weight: 300
+      line-height: 20px
+      color: white
+      z-index: 2
+      border-radius: 2px
+      width: 300px
+      transition: opacity 0.2s cubic-bezier(.64,.09,.08,1), transform 0.2s cubic-bezier(.64,.09,.08,1)
+    &:hover 
+      &:after 
+        display: block
+        opacity: 1
+        visibility: visible
+        transform: translateX(-50%) translateY(0)
+    &:hover
+      opacity: 0.9
+    
+
